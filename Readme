@@ -1,4 +1,4 @@
-## scss構成
+##scss構成
 ├─ css
 │ └─ style.css 
 │
@@ -27,5 +27,5 @@
   └─ 各ページのscss // 各ページのscss(top.scssなど)
   └─ common.scss // 共通で読み込ませるscss
 
-参考URL
+##参考URL
 https://shimizu-create.com/2023/10/3713/
