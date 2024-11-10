@@ -1,0 +1,31 @@
+## scss構成
+├─ css
+│ └─ style.css 
+│
+└─ scss // scssの機能別パーツファイルを格納
+  ├─ foundation // リセットCSSや基本的なスタイル
+  │ ├─ _base.scss
+  │ └─ _reset.scss
+  ├─ global // 変数、mixin、関数ファイル
+  │ ├─ _mixin.scss // mixin（メディアクエリ設定など）
+  │ ├─ _setting.scss // 変数$（カラー設定など）
+  │ └─ _function.scss // 関数をまとめる
+  │
+  ├─ layout // ヘッダー・メインのコンテンツエリア・サイドバー・フッターのスタイル
+  │ ├─ _l-footer.scss  //フッターのスタイル
+  │ ├─ _l-header.scss  //ヘッダーのスタイル
+  | ├─ _l-main.scss  //mainタグ・sectionタグのスタイル
+  |
+  ├─ component //　繰り返し使用されるビジュアルパターン
+  │ ├─ _l-footer.scss  //フッターのスタイル
+  │ ├─ _l-header.scss  //ヘッダーのスタイル
+  │ ├─ _l-main.scss  //mainタグ・sectionタグのスタイル
+  |
+  └─ pages // ページ単位のスタイル（投稿ページ・下層固定ページなど）
+  |  ├─ _p-top.scss
+  │
+  └─ 各ページのscss // 各ページのscss(top.scssなど)
+  └─ common.scss // 共通で読み込ませるscss
+
+参考URL
+https://shimizu-create.com/2023/10/3713/

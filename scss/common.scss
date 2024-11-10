@@ -1,0 +1,16 @@
+@use "./foundation/" as *;
+@use "./component/" as *;
+@use "./global/" as *;
+@use "./layout/" as *;
+
+.l-main {
+    width: 600px;
+    p {
+        margin-bottom: 20px;
+        padding-top: 10px;
+    }
+    span {
+        font-size: 16px;
+        color: #222222;
+    }
+}
