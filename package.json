@@ -4,7 +4,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "gulp":"gulp"
+    "gulp": "gulp"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +16,9 @@
     "gulp-notify": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^10.0.0",
-    "gulp-sass": "^5.1.0"
+    "gulp-sass": "^5.1.0",
+    "gulp-sass-glob": "^1.1.0",
+    "gulp-sourcemaps": "^3.0.0"
   },
   "dependencies": {
     "sass": "^1.80.6"
