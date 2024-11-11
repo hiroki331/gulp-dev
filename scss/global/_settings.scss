@@ -1,15 +1,15 @@
 // _mixins.scss
-@use "sass:map"; // mapモジュールをインポート
+@use 'sass:map'; // mapモジュールをインポート
 
 $breakpoints: (
-    "sp": "screen and (max-width: 767px)",
-    "tab": "screen and (max-width: 1023px)",
-    "pc": "screen and (min-width: 1024px)",
+  'sp': 'screen and (max-width: 767px)',
+  'tab': 'screen and (max-width: 1023px)',
+  'pc': 'screen and (min-width: 1024px)',
 );
 
 // メディアクエリのミックスインを定義
-@mixin mq($breakpoint: "sp") {
-    @media #{map.get($breakpoints, $breakpoint)} {
-        @content;
-    }
+@mixin mq($breakpoint: 'sp') {
+  @media #{map.get($breakpoints, $breakpoint)} {
+    @content;
+  }
 }

@@ -18,7 +18,7 @@
     @include mq(tab) {
         width: 500px;
     }
-    @include mq(sp) {
+    @include mq {
         width: 400px;
     }
 }
@@ -27,7 +27,7 @@
     @include mq(tab) {
         width: 200px;
     }
-    @include mq(sp) {
+    @include mq {
         width: 100px;
     }
 }
