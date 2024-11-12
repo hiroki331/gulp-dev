@@ -1,9 +1,9 @@
-@use 'settings' as settings;
+@use 'settings';
 
 @function cl($num) {
-  @return min(#{$num}px, calc(#{$num} / 767 * 100vw));
+  @return min(#{$num}px, calc(calc(#{$num} / 767 * 100vw)));
 }
 
 @function clp($min, $max) {
-  @return clamp(#{$min}px, calc(#{$min} / 767 * 100vw), $max);
+  @return clamp(#{$min}px, calc(calc(#{$min} / 767 * 100vw)), $max);
 }

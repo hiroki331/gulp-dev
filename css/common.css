@@ -18,7 +18,7 @@
   padding-top: 10px;
 }
 .l-main span {
-  font-size: 16px;
+  font-size: min(16px, 16 / 767 * 100vw);
   color: #222222;
 }
 @media screen and (max-width: 1023px) {

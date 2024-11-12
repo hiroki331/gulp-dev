@@ -1,33 +1,33 @@
-@use "sass:map"; // mapモジュールをインポート
-@use "./foundation";
-@use "./component" as *;
-@use "./global/settings" as *;
-@use "./global/function" as *;
-@use "./layout" as *;
+@use 'sass:map'; // mapモジュールをインポート
+@use './foundation';
+@use './component' as *;
+@use './global/settings' as *;
+@use './global/function' as *;
+@use './layout' as *;
 
 .l-main {
-    width: 600px;
-    p {
-        margin-bottom: 20px;
-        padding-top: 10px;
-    }
-    span {
-        font-size: 16px;
-        color: #222222;
-    }
-    @include mq(tab) {
-        width: 500px;
-    }
-    @include mq {
-        width: 400px;
-    }
+  width: 600px;
+  p {
+    margin-bottom: 20px;
+    padding-top: 10px;
+  }
+  span {
+    font-size: cl(16);
+    color: #222222;
+  }
+  @include mq(tab) {
+    width: 500px;
+  }
+  @include mq {
+    width: 400px;
+  }
 }
 
 .l-main02 {
-    @include mq(tab) {
-        width: 200px;
-    }
-    @include mq {
-        width: 100px;
-    }
+  @include mq(tab) {
+    width: 200px;
+  }
+  @include mq {
+    width: 100px;
+  }
 }

@@ -32,15 +32,17 @@ https://shimizu-create.com/2023/10/3713/
 
 ##Gulp設定
 
-scss並び替え
+##scss記述
 ##参考URL
 https://qiita.com/ogss34/items/eeed9193ec29ee605d68
 https://tips-web.net/gulp4-recommended-tasks/
 https://yusukeurabe.com/gulp-sourcemaps/
+https://github.com/mayoumelon/wp-mb2020
 
-画像の圧縮（webp化）
+##画像の圧縮（webp化）
+webp化と既存ファイルの圧縮
 ##参考URL
-
+https://www.asobou.co.jp/blog/web/gulp-imagemin
 
 ##pritter設定
 ##参考URL
