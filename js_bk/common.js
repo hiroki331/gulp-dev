@@ -35,4 +35,20 @@ $(function () {
   $pageTop.click(function () {
     $('html, body').animate({ scrollTop: 0 }, 300);
   });
+
+  // スクロールでクラスを追加する
+  document.addEventListener('scroll', function () {
+    const els = document.querySelectorAll('.js--sa');
+    els.forEach(function (el) {
+      const elementTop = el.getBoundingClientRect().top; // 要素までの距離を取得
+      const windowHeight = window.innerHeight; // ウィンドウの高さを取得
+
+      if (windowHeight - elementTop > 200) {
+        const delay = element.getAttribute('data-delay') || 0; // data-delay属性の値を取得、なければ0
+        setTimeout(function () {
+          element.classList.add('is-active');
+        }, delay);
+      }
+    });
+  });
 });
