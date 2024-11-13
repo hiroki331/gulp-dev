@@ -11,20 +11,29 @@ const rename = require('gulp-rename'); // ファイルをリネームする
 const cleanCSS = require('gulp-clean-css'); // cssを圧縮する
 
 // 画像を圧縮する
-const imagemin = require('gulp-imagemin');
-const imageminMozjpeg = require('imagemin-mozjpeg');
-const imageminPngquant = require('imagemin-pngquant');
-const imageminSvgo = require('imagemin-svgo');
-const webp = require('gulp-webp');
+const imagemin = require('gulp-imagemin'); // 画像圧縮
+const imageminMozjpeg = require('imagemin-mozjpeg'); // JPEG
+const imageminPngquant = require('imagemin-pngquant'); // PNG
+const imageminSvgo = require('imagemin-svgo'); // SVG
+const webp = require('gulp-webp'); // webp化
+
+// JSをコンパイルする
+const babel = require('gulp-babel'); // ES6をES5に変換
+const concat = require('gulp-concat'); // 一つにまとめる
+const uglify = require('gulp-uglify'); // JSを圧縮
+
+// EJS
 
 const srcPath = {
   css: './scss/*.scss',
   img: './img_bk/**',
+  js: './js_bk/*.js',
 };
 
 const destPath = {
   css: './css',
   img: './img',
+  js: './js',
 };
 
 const cssSass = (done) => {
@@ -87,16 +96,25 @@ const imgMin = () => {
     .pipe(dest(destPath.img));
 };
 
-const watchFiles = () => {
-  watch(srcPath.css, cssSass);
+const taskBabel = (done) => {
+  src(srcPath.js)
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+    .pipe(sourcemaps.init())
+    .pipe(babel({ presets: ['@babel/preset-env'] }))
+    .pipe(concat('main.js'))
+    .pipe(uglify())
+    .pipe(rename({ extname: '.min.js' }))
+    .pipe(sourcemaps.write('../maps'))
+    .pipe(dest(destPath.js));
+  done();
 };
 
-const watchImgFiles = () => {
+const watchFiles = (done) => {
+  watch(srcPath.css, cssSass);
   watch(srcPath.img, imgMin);
+  watch(srcPath.js, taskBabel);
+  done();
 };
 
 exports.dev = watchFiles;
-
-exports.img = watchImgFiles;
-
-exports.default = series(cssSass);
+exports.default = series(cssSass, imgMin);
