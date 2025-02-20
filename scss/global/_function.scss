@@ -5,5 +5,5 @@
 }
 
 @function clp($min, $max) {
-  @return clamp(#{$min}px, calc(calc(#{$min} / 767 * 100vw)), $max);
+  @return clamp(#{$min}px, calc(calc(#{$max} / 767 * 100vw)), #{$max}px);
 }

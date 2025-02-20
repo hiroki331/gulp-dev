@@ -13,3 +13,14 @@ $breakpoints: (
     @content;
   }
 }
+
+body {
+  @include mq('tab') {
+    margin: 0;
+  }
+  @include mq {
+    margin: 0;
+  }
+}
+
+// $mainColor: #004ba5;
