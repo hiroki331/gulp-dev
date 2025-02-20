@@ -109,6 +109,19 @@ const taskBabel = (done) => {
   done();
 };
 
+// Browsersyncを起動し、すべてのファイルに変更があればリロードする
+const watchBrowser = (done) => {
+  browserSync.init({
+    server: {
+      baseDir: '../',
+    },
+    port: 3001,
+  });
+
+  gulp.watch('../**/*').on('change', browserSync.reload); // すべてのファイルに変更があればリロード
+  done();
+};
+
 const watchFiles = (done) => {
   watch(srcPath.css, cssSass);
   watch(srcPath.img, imgMin);
@@ -116,5 +129,5 @@ const watchFiles = (done) => {
   done();
 };
 
-exports.dev = watchFiles;
+exports.dev = parallel(watchFiles, watchBrowser);
 exports.default = series(cssSass, imgMin);
