@@ -22,6 +22,9 @@ const babel = require('gulp-babel'); // ES6をES5に変換
 const concat = require('gulp-concat'); // 一つにまとめる
 const uglify = require('gulp-uglify'); // JSを圧縮
 
+// browsersync
+const browserSync = require('browser-sync');
+
 // EJS
 
 const srcPath = {
